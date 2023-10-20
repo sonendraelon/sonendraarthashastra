@@ -7,7 +7,9 @@ This is a single-page website created using ReactJS that displays a table and a 
 This project contains the following components:
 
 DataTable: Renders a table with the data from the dummyData.json file.
+
 LineChart: Renders a line chart with the data from the dummyData.json file using the recharts library.
+
 TabSwitch: A component to switch between the table and chart views.
 
 #Styling
