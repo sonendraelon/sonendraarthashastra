@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import DataTable from './components/DataTable';
+import LineChart from './components/LineChart';
+import TabSwitch from './components/TabSwitch';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [activeTab, setActiveTab] = useState('table');
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="personal-details">
+        <h1>Arthashastra Web App</h1>
+        <p>Name: Sonendra Singh</p>
+        <p>Email: sonendraelon@gmail.com</p>
+        <p>Contact Number: 7489111676</p>
+      </div>
+      <TabSwitch activeTab={activeTab} onTabChange={handleTabChange} />
+      {activeTab === 'table' ? <DataTable /> : <LineChart />}
     </div>
   );
-}
+};
 
 export default App;
